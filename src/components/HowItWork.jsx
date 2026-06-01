@@ -4,22 +4,22 @@ const cards = [
   {
     title: "Research & Ideation",
     desc: "Uplane scans your market, competitors and trends 24/7. Transforms insights into ad concepts.",
-    className: "left-[4%] top-[5%]",
+    className: "left-[2%] top-[8%]",
   },
   {
     title: "Ad & Landing Page Generation",
     desc: "From ideas to live campaigns in seconds.",
-    className: "left-[4%] bottom-[10%]",
+    className: "left-[2%] bottom-[28%]",
   },
   {
     title: "Optimisation Loop",
     desc: "Feeds results back to generate new ads and landing pages.",
-    className: "right-[4%] top-[5%]",
+    className: "right-[2%] top-[8%]",
   },
   {
     title: "Integrate for Profit",
     desc: "Sync with CRM/ERP data to optimize margin, LTV and profit.",
-    className: "right-[4%] bottom-[7%]",
+    className: "right-[2%] bottom-[28%]",
   },
 ];
 
@@ -169,16 +169,16 @@ text-slate-950
 
           {/* BOTTOM CARD */}
 
-          <div className="absolute left-1/2 bottom-0 -translate-x-1/2">
-            <div className="w-[470px] bg-white rounded-[30px] border border-slate-200 shadow-md p-8">
+          <div className="absolute left-1/2 bottom-0 bottom-29 -translate-x-1/2">
+            <div className="w-[430px] bg-white rounded-[30px] border border-slate-200 shadow-md p-4">
               <div className="flex gap-4">
                 <div className="w-14 h-14 rounded-2xl bg-blue-500" />
                 <div>
-                  <h3 className="text-[20px] font-semibold">
+                  <h3 className="font-bold text-[20px] ">
                     Cross-channel Budget Allocation
                   </h3>
 
-                  <p className="text-slate-500 mt-3">
+                  <p className="text-slate-500 mt-3 font-semibold">
                     Shifts spend where ROAS is highest.
                   </p>
                 </div>
@@ -225,16 +225,19 @@ function Step({ label, className }) {
 function Card({ title, desc, className }) {
   return (
     <div
-      className={`absolute ${className} w-[430px]
-bg-white/80
-backdrop-blur-xl
-rounded-[32px]
-border border-white/70
-p-2
-shadow-[0_8px_30px_rgba(15,23,42,0.06)]
-hover:shadow-[0_20px_60px_rgba(37,99,235,0.12)]
-transition-all duration-500`}
-    >
+  className={`absolute ${className}
+  w-[400px]
+  min-h-[180px]
+  bg-white/95
+  backdrop-blur-xl
+  rounded-[28px]
+  border border-slate-200/80
+  p-6
+  shadow-[0_10px_40px_rgba(15,23,42,0.06)]
+  hover:-translate-y-2
+  hover:shadow-[0_25px_60px_rgba(37,99,235,0.15)]
+  transition-all duration-500`}
+>
       <div className="flex gap-4">
         <div
           className="
