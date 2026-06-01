@@ -6,6 +6,7 @@ import HowItWorks from './components/HowItWork'
 import TrustSection from './components/TrustSection'
 import ReliabilitySection from './components/ReliabilitySection'
 import EventFeatures from './components/EventFeatures'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <HowItWorks />
       <TrustSection />
       <ReliabilitySection />
+      <Footer />
     </div>
   )
 }

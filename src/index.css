@@ -1,2 +1,29 @@
 @import "tailwindcss";
 
+.shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+
+  width: 40%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.7),
+    transparent
+  );
+
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    left: -150%;
+  }
+  to {
+    left: 250%;
+  }
+}

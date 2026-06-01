@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   Calendar,
   CreditCard,
@@ -7,8 +7,18 @@ import {
   Ticket,
   CheckCircle2,
 } from "lucide-react";
+import { barFadeIn } from "../utils/barFad";
+import { arc } from "../utils/arc";
 
 export default function EventFeatures() {
+
+  const barsRef  = useRef([]);
+  barFadeIn(barsRef);
+
+  const leftArcRef = useRef(null);
+  const rightArcRef = useRef(null);
+
+  arc(leftArcRef , rightArcRef)
   return (
     <section className="bg-[#f7f8fa] py-24 px-6">
       <div className="max-w-7xl mx-auto">
@@ -87,8 +97,19 @@ export default function EventFeatures() {
                   <div className="bg-zinc-50 rounded-[24px] p-5 w-[220px] shadow-sm">
                     <h4 className="font-medium mb-4">Payment Method</h4>
 
-                    <div className="h-12 rounded-xl bg-emerald-500 mb-3"></div>
-                    <div className="h-12 rounded-xl bg-sky-400 w-1/2"></div>
+                    <div
+                      ref={(el) => (barsRef.current[0] = el)}
+                      className="relative overflow-hidden h-12 rounded-xl bg-emerald-500 mb-3"
+                    >
+                      <div className="shimmer"></div>
+                    </div>
+
+                    <div
+                      ref={(el) => (barsRef.current[1] = el)}
+                      className="relative overflow-hidden h-12 rounded-xl bg-sky-400 w-1/2"
+                    >
+                      <div className="shimmer"></div>
+                    </div>
                   </div>
 
                   <div className="bg-amber-200 rounded-[24px] p-5 w-[220px] shadow-sm">
@@ -145,29 +166,31 @@ export default function EventFeatures() {
               {/* Chart */}
               <div className="relative h-[260px] flex justify-center items-center">
                <div className="relative w-[320px] h-[180px]">
-  <svg
-    viewBox="0 0 320 180"
-    className="absolute inset-0 w-full h-full"
-  >
-    {/* Left Arc */}
-    <path
-      d="M40 150 A120 120 0 0 1 160 30"
-      fill="none"
-      stroke="#49B6A5"
-      strokeWidth="30"
-      strokeLinecap="round"
-    />
+                <svg
+                  viewBox="0 0 320 180"
+                  className="absolute inset-0 w-full h-full"
+                >
+                  {/* Left Arc */}
+                  <path
+                  ref={leftArcRef}
+                    d="M40 150 A120 120 0 0 1 160 30"
+                    fill="none"
+                    stroke="#49B6A5"
+                    strokeWidth="30"
+                    strokeLinecap="round"
+                  />
 
-    {/* Right Arc */}
-    <path
-      d="M160 30 A120 120 0 0 1 280 150"
-      fill="none"
-      stroke="#75BFE7"
-      strokeWidth="30"
-      strokeLinecap="round"
-    />
-  </svg>
-</div>
+                  {/* Right Arc */}
+                  <path
+                  ref={rightArcRef}
+                    d="M160 30 A120 120 0 0 1 280 150"
+                    fill="none"
+                    stroke="#75BFE7"
+                    strokeWidth="30"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
                 <div className="absolute bottom-4 bg-white rounded-2xl p-4 shadow-lg">
                   <div className="flex gap-4">
                     <div className="w-16 h-8 rounded bg-emerald-400"></div>
